@@ -1,11 +1,13 @@
 var React = require('react');
-
+var marked = require('marked');
 function Output(props){
+
   return(
-    <p>{props.currentInput}</p>
+    <div
+    dangerouslySetInnerHTML={{__html: marked(props.currentInput)}}
+    />
   )
 }
-
 
 class Previewer extends React.Component{
   constructor(props){
