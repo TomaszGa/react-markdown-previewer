@@ -36,7 +36,6 @@ class Previewer extends React.Component{
       </form>
       </div>
       <div className="output-box">
-       This is your output:
        <Output currentInput={this.state.input} />
       </div>
       </div>
