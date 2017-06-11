@@ -1,5 +1,12 @@
 var React = require('react');
 
+function Output(props){
+  return(
+    <p>{props.currentInput}</p>
+  )
+}
+
+
 class Previewer extends React.Component{
   constructor(props){
     super(props);
@@ -10,7 +17,6 @@ class Previewer extends React.Component{
   }
   inputChange(event) {
     var value = event.target.value;
-    console.log(value);
     this.setState(function(){
       return {
         input: value
@@ -23,12 +29,13 @@ class Previewer extends React.Component{
       <div className="input-box">
       <form className="input-form">
         <label>Enter text to preview</label>
-        <textarea className="input-textbox" type="text" onChange={this.inputChange}></textarea>
+        <textarea className="input-textbox" type="text" onChange={this.inputChange} defaultValue="Well this is a test"></textarea>
 
       </form>
       </div>
       <div className="output-box">
-       <p>This is your output:</p>
+       This is your output:
+       <Output currentInput={this.state.input} />
       </div>
       </div>
 		)
