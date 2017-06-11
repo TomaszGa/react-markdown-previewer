@@ -5,7 +5,9 @@ class App extends React.Component {
   render() {
     return (
       <div >
+      <h1 className="app-heading">Markdown Previewer</h1>
       <Previewer/>
+      <footer>Coded by Tomasz Galina</footer>
       </div>
     );
   }
